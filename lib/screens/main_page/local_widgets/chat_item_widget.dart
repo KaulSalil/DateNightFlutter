@@ -50,7 +50,7 @@ class ChatItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Get.textTheme.bodyText1,
+                    style: Get.textTheme.bodyLarge,
                   ),
                   _buildLastMessage(),
                 ],
@@ -62,14 +62,14 @@ class ChatItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     Utils.formatHour(time),
-                    style: Get.textTheme.caption!.copyWith(
+                    style: Get.textTheme.bodySmall!.copyWith(
                       color: Colors.grey[600],
                       fontWeight: FontWeight.w300,
                     ),
                   ),
                   Text(
                     Utils.determineTime(time),
-                    style: Get.textTheme.caption!.copyWith(
+                    style: Get.textTheme.bodySmall!.copyWith(
                       color: Colors.grey[600],
                       fontWeight: FontWeight.w300,
                     ),
@@ -87,7 +87,7 @@ class ChatItemWidget extends StatelessWidget {
     if (lastMessageType == MessageType.text) {
       return Text(
         lastMessage,
-        style: Get.textTheme.caption!.copyWith(
+        style: Get.textTheme.bodySmall!.copyWith(
           color: Colors.grey[600],
           fontWeight: FontWeight.w300,
         ),
@@ -103,7 +103,7 @@ class ChatItemWidget extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             'Image',
-            style: Get.textTheme.caption!.copyWith(
+            style: Get.textTheme.bodySmall!.copyWith(
               color: Colors.grey[600],
               fontWeight: FontWeight.w300,
             ),
@@ -121,7 +121,7 @@ class ChatItemWidget extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             'Reveal request',
-            style: Get.textTheme.caption!.copyWith(
+            style: Get.textTheme.bodySmall!.copyWith(
               color: Colors.grey[600],
               fontWeight: FontWeight.w300,
             ),

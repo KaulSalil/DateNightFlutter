@@ -18,7 +18,7 @@ class PersonalityCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
@@ -26,7 +26,7 @@ class PersonalityCardWidget extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -35,11 +35,11 @@ class PersonalityCardWidget extends StatelessWidget {
         children: [
           Text(
             question,
-            style: Get.textTheme.subtitle2!.copyWith(
+            style: Get.textTheme.titleSmall!.copyWith(
               fontSize: 14,
             ),
           ),
-          SizedBox(height: 18),
+          const SizedBox(height: 18),
           SliderWidget(
             min: 1,
             max: 5,

@@ -6,7 +6,6 @@ import 'package:college_match/data/model/major_model.dart';
 import 'package:college_match/data/model/user_answers_model.dart';
 import 'package:college_match/data/services/user_service.dart';
 import 'package:college_match/screens/global_widgets/dot_loading.dart';
-import 'package:college_match/screens/main_page/main_page.dart';
 import 'package:college_match/screens/personal_data_page/data/interest_data.dart';
 import 'package:college_match/screens/personal_data_page/data/lifestyleq_data.dart';
 import 'package:college_match/screens/personal_data_page/data/majors_data.dart';
@@ -61,7 +60,7 @@ class PersonalDataPageController extends GetxController {
       if (isLoading) {
         Get.defaultDialog(
           title: 'Loading',
-          content: Container(
+          content: const SizedBox(
             height: 50,
             width: 50,
             child: Center(

@@ -20,7 +20,7 @@ class SignUpController extends GetxController {
   String _password = '';
   String _confirmPassword = '';
   String _phoneNumber = '';
-  String _verificationId = '';
+  final String _verificationId = '';
   final _hidePassword = true.obs;
   final _hideConfirmPassword = true.obs;
   final _isLoading = false.obs;

@@ -6,7 +6,6 @@ import 'package:college_match/screens/personal_data_page/data/majors_data.dart';
 import 'package:college_match/screens/personal_data_page/controllers/personal_data_page_controller.dart';
 import 'package:college_match/screens/personal_data_page/data/personalityq_data.dart';
 import 'package:get/get.dart';
-import 'package:get/get_instance/src/bindings_interface.dart';
 
 class PersonalDataBinding implements Bindings {
   @override

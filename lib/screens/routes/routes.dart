@@ -1,6 +1,5 @@
 import 'package:college_match/screens/chat_page/chat_page.dart';
 import 'package:college_match/screens/chat_page/chat_page_binding.dart';
-import 'package:college_match/screens/chat_page/controllers/chat_page_controller.dart';
 import 'package:college_match/screens/main_page/main_page.dart';
 import 'package:college_match/screens/main_page/main_page_binding.dart';
 import 'package:college_match/screens/personal_data_page/personal_data_binding.dart';

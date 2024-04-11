@@ -1,4 +1,3 @@
-import 'package:college_match/core/values/colors.dart';
 import 'package:college_match/screens/personal_data_page/controllers/personal_data_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,9 +14,9 @@ class MajorSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 95),
+              const SizedBox(height: 95),
               Text("Alright ${_controller.name}! What is your major?",
-                  style: Get.textTheme.subtitle1!.copyWith(
+                  style: Get.textTheme.titleMedium!.copyWith(
                     color: Colors.white,
                     fontSize: 18,
                   )),
@@ -25,7 +24,7 @@ class MajorSection extends StatelessWidget {
                 child: Center(
                   child: TextFormField(
                     controller: _controller.majorTextController,
-                    style: Get.textTheme.subtitle1!.copyWith(
+                    style: Get.textTheme.titleMedium!.copyWith(
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
@@ -37,7 +36,7 @@ class MajorSection extends StatelessWidget {
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 24, vertical: 20),
                       hintText: "Your major...",
-                      hintStyle: Get.textTheme.subtitle1!.copyWith(
+                      hintStyle: Get.textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
                       ),

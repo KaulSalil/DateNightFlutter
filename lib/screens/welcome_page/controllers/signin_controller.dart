@@ -1,5 +1,3 @@
-import 'package:college_match/core/values/colors.dart';
-import 'package:college_match/core/values/firebase_constants.dart';
 import 'package:college_match/data/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

@@ -45,7 +45,7 @@ class ButtonLogoWidget extends StatelessWidget {
                     child: Center(
                       child: Text(
                         text!,
-                        style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
                               color: textColor,
                             ),
                       ),

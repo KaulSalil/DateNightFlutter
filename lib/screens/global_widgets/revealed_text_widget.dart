@@ -6,7 +6,7 @@ class RevealedTextWidget extends StatelessWidget {
   final String reveal;
   final TextStyle style;
 
-  RevealedTextWidget({
+  const RevealedTextWidget({
     Key? key,
     required this.isRevealed,
     required this.unReveal,

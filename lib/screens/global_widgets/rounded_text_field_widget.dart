@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../core/values/colors.dart';
@@ -47,7 +45,7 @@ class RoundedTextFieldWidget extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       initialValue: initialValue,
-      style: Get.textTheme.bodyText2!.copyWith(
+      style: Get.textTheme.bodyMedium!.copyWith(
         fontWeight: FontWeight.w500,
       ),
       decoration: InputDecoration(
@@ -55,11 +53,11 @@ class RoundedTextFieldWidget extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
         hintText: hintText,
         errorText: errorText,
-        hintStyle: Get.textTheme.bodyText2!.copyWith(
+        hintStyle: Get.textTheme.bodyMedium!.copyWith(
           fontWeight: FontWeight.w600,
           color: const Color(0xFFC8C8C8),
         ),
-        errorStyle: Get.textTheme.caption!.copyWith(
+        errorStyle: Get.textTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w500,
           color: AppColor.kAccentColor['red']!,
         ),

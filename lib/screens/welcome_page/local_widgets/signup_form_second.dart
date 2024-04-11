@@ -3,7 +3,6 @@ import 'package:college_match/screens/global_widgets/glow_button_widget.dart';
 import 'package:college_match/screens/global_widgets/rounded_text_field_widget.dart';
 import 'package:college_match/screens/welcome_page/controllers/signup_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -45,7 +44,7 @@ class SignUpFormSecond extends StatelessWidget {
                 selectorConfig: const SelectorConfig(
                   selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                 ),
-                textStyle: Get.textTheme.bodyText2!.copyWith(
+                textStyle: Get.textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
                 initialValue: PhoneNumber(
@@ -56,7 +55,7 @@ class SignUpFormSecond extends StatelessWidget {
                 spaceBetweenSelectorAndTextField: 0,
                 ignoreBlank: false,
                 autoValidateMode: AutovalidateMode.disabled,
-                selectorTextStyle: Get.textTheme.bodyText1,
+                selectorTextStyle: Get.textTheme.bodyLarge,
                 formatInput: false,
                 keyboardType: const TextInputType.numberWithOptions(
                     signed: true, decimal: true),
@@ -64,11 +63,11 @@ class SignUpFormSecond extends StatelessWidget {
                   hintText: "Phone Number",
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-                  hintStyle: Get.textTheme.bodyText2!.copyWith(
+                  hintStyle: Get.textTheme.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFFC8C8C8),
                   ),
-                  errorStyle: Get.textTheme.caption!.copyWith(
+                  errorStyle: Get.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: AppColor.kAccentColor['red']!,
                   ),
@@ -98,11 +97,11 @@ class SignUpFormSecond extends StatelessWidget {
                   hintText: "Country Name",
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-                  hintStyle: Get.textTheme.bodyText2!.copyWith(
+                  hintStyle: Get.textTheme.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFFC8C8C8),
                   ),
-                  errorStyle: Get.textTheme.caption!.copyWith(
+                  errorStyle: Get.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: AppColor.kAccentColor['red']!,
                   ),
@@ -133,20 +132,20 @@ class SignUpFormSecond extends StatelessWidget {
               GlowButtonWidget(
                 height: 60,
                 width: double.infinity,
-                child: Center(
-                  child: Text(
-                    "Sign up",
-                    style: Get.textTheme.subtitle1!.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                backgroundColor: Color(0xFFA989FF),
+                backgroundColor: const Color(0xFFA989FF),
                 glowColor: AppColor.kPrimaryPurple[100]!,
                 glowOffset: const Offset(0, 6),
                 borderRadius: 12,
                 blurRadius: 22,
                 onPressed: _controller.trySignUp,
+                child: Center(
+                  child: Text(
+                    "Sign up",
+                    style: Get.textTheme.titleMedium!.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

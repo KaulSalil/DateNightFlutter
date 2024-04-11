@@ -52,13 +52,13 @@ class MarkCardWidget extends FormField<bool> {
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.2),
                                   blurRadius: 4,
-                                  offset: Offset(2, 0),
+                                  offset: const Offset(2, 0),
                                 ),
                               ],
                             ),
                             child: Text(
                               text.question,
-                              style: Get.textTheme.subtitle2!.copyWith(
+                              style: Get.textTheme.titleSmall!.copyWith(
                                 fontSize: 14,
                               ),
                             ),
@@ -80,7 +80,7 @@ class MarkCardWidget extends FormField<bool> {
                             BoxShadow(
                               color: Colors.black.withOpacity(0.1),
                               blurRadius: 4,
-                              offset: Offset(2, 0),
+                              offset: const Offset(2, 0),
                             ),
                           ],
                         ),

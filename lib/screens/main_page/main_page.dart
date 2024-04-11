@@ -14,7 +14,6 @@ import 'package:college_match/screens/search_partner_page/search_partner_page.da
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class MainPage extends StatelessWidget {
   static String routeName = '/main-page';
@@ -42,7 +41,7 @@ class MainPage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Container(
+                    child: SizedBox(
                       height: 155,
                       child: Column(
                         children: [
@@ -110,9 +109,9 @@ class MainPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
+                        children: [
                           Icon(
                             IconlyBold.chat,
                             size: 24,
@@ -129,15 +128,15 @@ class MainPage extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       InkWell(
                         onTap: () {
                           Get.toNamed(PersonalDataPage.routeName,
                               arguments: {'retake': true});
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: const [
+                          children: [
                             Icon(
                               IconlyLight.document,
                               size: 24,
@@ -185,7 +184,7 @@ class MainPage extends StatelessWidget {
                             icon: Image.asset(
                                 'assets/icons/search-partner-icon.png'),
                             padding: EdgeInsets.zero,
-                            constraints: BoxConstraints(),
+                            constraints: const BoxConstraints(),
                             onPressed: () {
                               Get.toNamed(SearchPartnerPage.routeName);
                               print('here');
@@ -194,7 +193,7 @@ class MainPage extends StatelessWidget {
                         ),
                         Text(
                           'Match',
-                          style: Get.textTheme.caption!.copyWith(
+                          style: Get.textTheme.bodySmall!.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 9,
@@ -354,7 +353,7 @@ class MainPage extends StatelessWidget {
               children: [
                 Text(
                   _controller.getHeaderGreetings(),
-                  style: Get.textTheme.caption!.copyWith(
+                  style: Get.textTheme.bodySmall!.copyWith(
                     color: Colors.grey[600],
                     fontWeight: FontWeight.w300,
                     fontSize: 12,
@@ -362,7 +361,7 @@ class MainPage extends StatelessWidget {
                 ),
                 Text(
                   data.name ?? 'null',
-                  style: Get.textTheme.subtitle2!.copyWith(
+                  style: Get.textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -408,6 +407,7 @@ class MainPage extends StatelessWidget {
                   items: [
                     PopupMenuItem(
                         onTap: () => _controller.authService.signOut(),
+                        value: 'logout',
                         child: Row(
                           children: [
                             Container(
@@ -426,13 +426,12 @@ class MainPage extends StatelessWidget {
                             const SizedBox(width: 8),
                             Text(
                               'Logout',
-                              style: Get.textTheme.bodyText2!.copyWith(
+                              style: Get.textTheme.bodyMedium!.copyWith(
                                 color: Colors.black,
                               ),
                             ),
                           ],
-                        ),
-                        value: 'logout'),
+                        )),
                   ],
                 );
               },

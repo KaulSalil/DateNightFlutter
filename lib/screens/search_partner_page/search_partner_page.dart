@@ -23,7 +23,7 @@ class SearchPartnerPage extends StatelessWidget {
               ),
             ),
           ),
-          FindingWidget()
+          const FindingWidget()
         ],
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:college_match/screens/personal_data_page/controllers/personal_data_page_controller.dart';
-import 'package:college_match/screens/personal_data_page/personal_data_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,10 +14,10 @@ class ProfilePhotoSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 95),
+          const SizedBox(height: 95),
           Text(
             "Give us your best photo",
-            style: Get.textTheme.subtitle1!.copyWith(
+            style: Get.textTheme.titleMedium!.copyWith(
               color: Colors.white,
               fontSize: 18,
             ),

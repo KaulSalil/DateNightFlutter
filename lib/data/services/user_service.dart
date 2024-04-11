@@ -98,7 +98,7 @@ class UserService {
   Future<String?> uploadProfileImage(String uid, File imagefile) async {
     List<String> splitPath = imagefile.path.split('.');
     String filetype = splitPath[splitPath.length - 1];
-    String filename = uid + '.' + filetype;
+    String filename = '$uid.$filetype';
 
     try {
       await firebaseStorage

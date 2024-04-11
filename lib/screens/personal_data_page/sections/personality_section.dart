@@ -39,28 +39,28 @@ class PersonalitySection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 95),
+                  const SizedBox(height: 95),
                   Text(
                     "Choose your best answer based on your own personality",
-                    style: Get.textTheme.subtitle1!.copyWith(
+                    style: Get.textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                       fontSize: 18,
                     ),
                   ),
                   Text(
                     "1 if you dissagree, 5 if you agree",
-                    style: Get.textTheme.caption!.copyWith(
+                    style: Get.textTheme.bodySmall!.copyWith(
                       color: Colors.white,
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   _buildQuestionCard(questionData, index),
                 ],
               );
             } else if (index == data.length - 1) {
               return Padding(
-                padding: EdgeInsets.only(bottom: 80),
+                padding: const EdgeInsets.only(bottom: 80),
                 child: _buildQuestionCard(questionData, index),
               );
             } else {
@@ -79,7 +79,7 @@ class PersonalitySection extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(18),
               ),
-              child: Center(child: const DotLoading()),
+              child: const Center(child: DotLoading()),
             ),
           ),
         ),
@@ -89,7 +89,7 @@ class PersonalitySection extends StatelessWidget {
 
   Padding _buildQuestionCard(PersonalityQuestionModel questionData, int index) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 16),
       child: PersonalityCardWidget(
         question: questionData.question,
         initialValue: ((questionData.scaleAnswers ?? 1).toDouble() - 1) / 4,

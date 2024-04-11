@@ -17,10 +17,10 @@ class GenderSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 95),
+          const SizedBox(height: 95),
           Text(
             "What's your gender?",
-            style: Get.textTheme.subtitle1!.copyWith(
+            style: Get.textTheme.titleMedium!.copyWith(
               color: Colors.white,
               fontSize: 18,
             ),
@@ -36,7 +36,7 @@ class GenderSection extends StatelessWidget {
                     onPressed: () {
                       _controller.gender.value = "Male";
                     },
-                    duration: Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 200),
                     scaleFactor: 2,
                     child: Obx(
                       () => Container(
@@ -70,7 +70,7 @@ class GenderSection extends StatelessWidget {
                             ),
                             Text(
                               "Male",
-                              style: Get.textTheme.subtitle2!.copyWith(
+                              style: Get.textTheme.titleSmall!.copyWith(
                                 color: _controller.gender.value == "Male"
                                     ? Colors.white
                                     : Colors.black,
@@ -83,7 +83,7 @@ class GenderSection extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Flexible(
                 flex: 1,
                 child: AspectRatio(
@@ -92,7 +92,7 @@ class GenderSection extends StatelessWidget {
                     onPressed: () {
                       _controller.gender.value = "Female";
                     },
-                    duration: Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 200),
                     scaleFactor: 2,
                     child: Obx(
                       () => Container(
@@ -123,7 +123,7 @@ class GenderSection extends StatelessWidget {
                             ),
                             Text(
                               "Female",
-                              style: Get.textTheme.subtitle2!.copyWith(
+                              style: Get.textTheme.titleSmall!.copyWith(
                                 color: _controller.gender.value == "Female"
                                     ? Colors.white
                                     : Colors.black,

@@ -51,7 +51,7 @@ class CustomSliderThumbRect extends SliderComponentShape {
             fontWeight: FontWeight.w700,
             color: sliderTheme.thumbColor,
             height: 1),
-        text: '${getValue(value)}');
+        text: getValue(value));
     TextPainter tp = TextPainter(
         text: span,
         textAlign: TextAlign.left,

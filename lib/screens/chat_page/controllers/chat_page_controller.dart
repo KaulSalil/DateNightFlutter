@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:college_match/core/values/colors.dart';
 import 'package:college_match/core/values/firebase_constants.dart';
@@ -9,7 +8,6 @@ import 'package:college_match/data/model/user_model.dart';
 import 'package:college_match/data/services/chat_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -62,7 +60,7 @@ class ChatPageController extends GetxController {
       chatService.sendMessage(content, type, groupChatId, currentUserId);
       messageTextController.clear();
       listScrollController.animateTo(0,
-          duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+          duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     }
   }
 
@@ -109,7 +107,7 @@ class ChatPageController extends GetxController {
               const SizedBox(width: 8),
               Text(
                 'Ask to reveal',
-                style: Get.textTheme.bodyText2!.copyWith(
+                style: Get.textTheme.bodyMedium!.copyWith(
                   color: Colors.black,
                 ),
               ),

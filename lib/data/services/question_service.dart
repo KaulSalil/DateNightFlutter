@@ -6,24 +6,24 @@ import 'package:college_match/data/model/personality_question_model.dart';
 
 class QuestionService {
   Future<List<MajorModel>> getAllMajor() async {
-    final List<MajorModel> _majorList = [];
+    final List<MajorModel> majorList = [];
 
     try {
       await FirebaseFirestore.instance.collection('majors').get().then(
         (QuerySnapshot snapshot) {
           for (var doc in snapshot.docs) {
-            _majorList.add(MajorModel.fromDocument(doc));
+            majorList.add(MajorModel.fromDocument(doc));
           }
         },
       );
     } catch (e) {
       print(e);
     }
-    return _majorList;
+    return majorList;
   }
 
   Future<List<LifestyleQuestionModel>> getAllLifestyleQuestion() async {
-    final List<LifestyleQuestionModel> _lifestyleQuestionList = [];
+    final List<LifestyleQuestionModel> lifestyleQuestionList = [];
 
     try {
       await FirebaseFirestore.instance
@@ -33,7 +33,7 @@ class QuestionService {
           .then(
         (QuerySnapshot snapshot) {
           for (var doc in snapshot.docs) {
-            _lifestyleQuestionList
+            lifestyleQuestionList
                 .add(LifestyleQuestionModel.fromDocument(doc));
           }
         },
@@ -41,11 +41,11 @@ class QuestionService {
     } catch (e) {
       print(e);
     }
-    return _lifestyleQuestionList;
+    return lifestyleQuestionList;
   }
 
   Future<List<PersonalityQuestionModel>> getAllPersonalityQuestion() async {
-    final List<PersonalityQuestionModel> _personalityQuestionList = [];
+    final List<PersonalityQuestionModel> personalityQuestionList = [];
 
     try {
       await FirebaseFirestore.instance
@@ -55,7 +55,7 @@ class QuestionService {
           .then(
         (QuerySnapshot snapshot) {
           for (var doc in snapshot.docs) {
-            _personalityQuestionList
+            personalityQuestionList
                 .add(PersonalityQuestionModel.fromDocument(doc));
           }
         },
@@ -63,23 +63,23 @@ class QuestionService {
     } catch (e) {
       print(e);
     }
-    return _personalityQuestionList;
+    return personalityQuestionList;
   }
 
   Future<List<InterestModel>> getAllInterest() async {
-    final List<InterestModel> _interestList = [];
+    final List<InterestModel> interestList = [];
 
     try {
       await FirebaseFirestore.instance.collection('interests').get().then(
         (QuerySnapshot snapshot) {
           for (var doc in snapshot.docs) {
-            _interestList.add(InterestModel.fromDocument(doc));
+            interestList.add(InterestModel.fromDocument(doc));
           }
         },
       );
     } catch (e) {
       print(e);
     }
-    return _interestList;
+    return interestList;
   }
 }

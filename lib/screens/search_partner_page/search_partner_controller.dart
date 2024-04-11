@@ -20,7 +20,7 @@ class SearchPartnerController extends GetxController {
     } catch (e) {
       isFirtsTime = false;
     }
-    Future.delayed(Duration(seconds: 5), () async {
+    Future.delayed(const Duration(seconds: 5), () async {
       var response = await _userService.searchPartner(auth.currentUser!.uid);
 
       if (response.isNotEmpty) {

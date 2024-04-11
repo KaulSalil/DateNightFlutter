@@ -1,5 +1,4 @@
 import 'package:college_match/data/model/lifestyle_question_model.dart';
-import 'package:college_match/data/model/personality_question_model.dart';
 import 'package:college_match/data/services/question_service.dart';
 import 'package:get/get.dart';
 

@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:college_match/core/utils.dart';
 import 'package:college_match/core/values/firebase_constants.dart';
 import 'package:college_match/data/model/message_chat_model.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class ChatService {
   Stream<QuerySnapshot> getChatStream(String groupChatId, int limit) {
@@ -123,10 +122,7 @@ class ChatService {
   Future<String?> uploadImage(String groupId, File imagefile) async {
     List<String> splitPath = imagefile.path.split('.');
     String filetype = splitPath[splitPath.length - 1];
-    String filename = Utils.generateRandomString(10) +
-        DateTime.now().millisecondsSinceEpoch.toString() +
-        '.' +
-        filetype;
+    String filename = '${Utils.generateRandomString(10)}${DateTime.now().millisecondsSinceEpoch}.$filetype';
 
     try {
       await firebaseStorage

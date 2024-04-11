@@ -25,7 +25,7 @@ class NotficationButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           width: 30,
           height: 30,
           child: RoundedIconButtonWidget(

@@ -1,5 +1,4 @@
 import 'package:college_match/data/model/interest_model.dart';
-import 'package:college_match/data/model/major_model.dart';
 import 'package:college_match/data/services/question_service.dart';
 import 'package:get/get.dart';
 

@@ -16,10 +16,10 @@ class FullnameSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 95),
+          const SizedBox(height: 95),
           Text(
             "Hello! What do you want to call you?",
-            style: Get.textTheme.subtitle1!.copyWith(
+            style: Get.textTheme.titleMedium!.copyWith(
               color: Colors.white,
               fontSize: 18,
             ),
@@ -28,7 +28,7 @@ class FullnameSection extends StatelessWidget {
             child: Center(
               child: TextFormField(
                 controller: _controller.nameTextController,
-                style: Get.textTheme.subtitle1!.copyWith(
+                style: Get.textTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
                 ),
@@ -39,11 +39,11 @@ class FullnameSection extends StatelessWidget {
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                   hintText: "Your name...",
-                  hintStyle: Get.textTheme.subtitle1!.copyWith(
+                  hintStyle: Get.textTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
-                  errorStyle: Get.textTheme.caption!.copyWith(
+                  errorStyle: Get.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: AppColor.kAccentColor['red']!,
                   ),

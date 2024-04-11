@@ -20,19 +20,18 @@ class WidgetTest extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             signInWithGoogleButton(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             signInWithEmail(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () {},
-              child: Text('Elevated Button'),
               style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
+                  foregroundColor: Colors.white, shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  primary: Colors.white,
                   backgroundColor: Colors.black,
                   shadowColor: Colors.purple),
+              child: const Text('Elevated Button'),
             ),
           ],
         ),
@@ -44,7 +43,7 @@ class WidgetTest extends StatelessWidget {
     return ButtonLogoWidget(
       height: 60,
       width: 300,
-      padding: EdgeInsets.all(11),
+      padding: const EdgeInsets.all(11),
       logo: CircleLogoWidget(
           diameter: 38,
           color: Colors.white,
@@ -60,7 +59,7 @@ class WidgetTest extends StatelessWidget {
     return ButtonLogoWidget(
       height: 60,
       width: 300,
-      padding: EdgeInsets.all(11),
+      padding: const EdgeInsets.all(11),
       logo: CircleLogoWidget(
         diameter: 38,
         color: Colors.white,

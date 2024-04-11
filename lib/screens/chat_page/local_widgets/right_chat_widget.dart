@@ -13,7 +13,7 @@ class RightChatWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -23,9 +23,9 @@ class RightChatWidget extends StatelessWidget {
               maxWidth: Get.width * 0.6,
             ),
             child: Container(
-              padding: EdgeInsets.only(bottom: 8, top: 16, left: 16, right: 16),
+              padding: const EdgeInsets.only(bottom: 8, top: 16, left: 16, right: 16),
               decoration: BoxDecoration(
-                color: Color(0xFFDED6F4),
+                color: const Color(0xFFDED6F4),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   bottomLeft: Radius.circular(16),
@@ -43,13 +43,13 @@ class RightChatWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   content,
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   SizedBox(
                     width: double.infinity,
                     child: Text(
                       time,
-                      style: Get.textTheme.caption!.copyWith(
-                        color: Color(0xFF737373),
+                      style: Get.textTheme.bodySmall!.copyWith(
+                        color: const Color(0xFF737373),
                         fontSize: 9,
                       ),
                       textAlign: TextAlign.end,

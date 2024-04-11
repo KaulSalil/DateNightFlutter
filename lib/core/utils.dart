@@ -10,17 +10,15 @@ class Utils {
       return CachedNetworkImageProvider(revealUrl);
     } else {
       if (gender == 'Male') {
-        return AssetImage('assets/images/default-profile-picture/male.png');
+        return const AssetImage('assets/images/default-profile-picture/male.png');
       } else {
-        return AssetImage('assets/images/default-profile-picture/female.png');
+        return const AssetImage('assets/images/default-profile-picture/female.png');
       }
     }
   }
 
   static String formatHour(DateTime time) {
-    return time.hour.toString().padLeft(2, '0') +
-        ':' +
-        time.minute.toString().padLeft(2, '0');
+    return '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
   }
 
   static String determineTime(DateTime time) {

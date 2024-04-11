@@ -1,5 +1,4 @@
 import 'package:college_match/core/values/colors.dart';
-import 'package:college_match/core/values/firebase_constants.dart';
 import 'package:college_match/data/services/auth_service.dart';
 import 'package:college_match/screens/global_widgets/glow_button_widget.dart';
 import 'package:college_match/screens/global_widgets/rounded_text_field_widget.dart';
@@ -90,20 +89,20 @@ class SignUpFormFirst extends StatelessWidget {
               GlowButtonWidget(
                 height: 60,
                 width: double.infinity,
-                child: Center(
-                  child: Text(
-                    "Continue",
-                    style: Get.textTheme.subtitle1!.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                backgroundColor: Color(0xFFA989FF),
+                backgroundColor: const Color(0xFFA989FF),
                 glowColor: AppColor.kPrimaryPurple[100]!,
                 glowOffset: const Offset(0, 6),
                 borderRadius: 12,
                 blurRadius: 22,
                 onPressed: _controller.tryContinue,
+                child: Center(
+                  child: Text(
+                    "Continue",
+                    style: Get.textTheme.titleMedium!.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: 50),
               //Divider Or Sign up with
@@ -128,7 +127,7 @@ class SignUpFormFirst extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
                       "Or Sign up with",
-                      style: Get.textTheme.caption,
+                      style: Get.textTheme.bodySmall,
                     ),
                   ),
                   Expanded(
@@ -152,15 +151,15 @@ class SignUpFormFirst extends StatelessWidget {
               GlowButtonWidget(
                 width: 60,
                 height: 60,
-                child: Center(
-                  child: Image.asset('assets/icons/google-icon.png'),
-                ),
                 backgroundColor: Colors.white,
                 glowColor: const Color(0xFF9E9E9E).withAlpha(30),
                 glowOffset: const Offset(0, 8),
                 borderRadius: 34,
                 blurRadius: 15,
                 onPressed: _authService.signInWithGoogle,
+                child: Center(
+                  child: Image.asset('assets/icons/google-icon.png'),
+                ),
               ),
             ],
           ),

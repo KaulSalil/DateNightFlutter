@@ -52,7 +52,7 @@ class PersonalDataPage extends StatelessWidget {
                         MajorSection(),
                         PersonalitySection(),
                         LifestyleSection(),
-                        InterestSection(),
+                        const InterestSection(),
                         ProfilePhotoSection(),
                       ],
                     ),
@@ -70,22 +70,22 @@ class PersonalDataPage extends StatelessWidget {
                       child: GlowButtonWidget(
                         height: 60,
                         width: Get.width * 0.85,
+                        backgroundColor: const Color(0xFFA989FF),
+                        glowColor: const Color(0xFFA989FF),
+                        glowOffset: const Offset(0, 6),
+                        borderRadius: 30,
+                        blurRadius: 25,
+                        onPressed: _controller.goNext,
                         child: Center(
                           child: Text(
                             _controller.stepIndex.value != 7
                                 ? "Continue"
                                 : "Submit",
-                            style: Get.textTheme.subtitle1!.copyWith(
+                            style: Get.textTheme.titleMedium!.copyWith(
                               color: Colors.white,
                             ),
                           ),
                         ),
-                        backgroundColor: Color(0xFFA989FF),
-                        glowColor: Color(0xFFA989FF),
-                        glowOffset: const Offset(0, 6),
-                        borderRadius: 30,
-                        blurRadius: 25,
-                        onPressed: _controller.goNext,
                       ),
                     ),
                   )
@@ -105,14 +105,8 @@ class PersonalDataPage extends StatelessWidget {
             onPressed: () {
               _controller.goBack();
             },
-            child: Icon(
-              IconlyLight.arrowLeft,
-              color:
-                  Colors.black.withOpacity(_controller.backButtonOpacity.value),
-              size: 22,
-            ),
             style: OutlinedButton.styleFrom(
-              fixedSize: Size(40, 40),
+              fixedSize: const Size(40, 40),
               minimumSize: Size.zero,
               backgroundColor:
                   Colors.white.withOpacity(_controller.backButtonOpacity.value),
@@ -121,6 +115,12 @@ class PersonalDataPage extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
+            ),
+            child: Icon(
+              IconlyLight.arrowLeft,
+              color:
+                  Colors.black.withOpacity(_controller.backButtonOpacity.value),
+              size: 22,
             ),
           ),
         ));

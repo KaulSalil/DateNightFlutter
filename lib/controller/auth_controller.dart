@@ -1,6 +1,5 @@
 import 'package:college_match/core/values/firebase_constants.dart';
 import 'package:college_match/data/services/auth_service.dart';
-import 'package:college_match/screens/chat_page/chat_page.dart';
 import 'package:college_match/screens/main_page/main_page.dart';
 import 'package:college_match/screens/personal_data_page/personal_data_page.dart';
 import 'package:college_match/screens/welcome_page/controllers/signup_controller.dart';
@@ -38,16 +37,16 @@ class AuthController extends GetxController {
     if (user == null) {
       Get.offAllNamed(WelcomePage.routeName);
     } else {
-      final bool _isUserFinishedRegister =
+      final bool isUserFinishedRegister =
           await _authService.isUserFinishedRegister(auth.currentUser!.uid);
 
-      final bool _isUserFilledQuitionaire =
+      final bool isUserFilledQuitionaire =
           await _authService.isUserFilledQuestionaire(auth.currentUser!.uid);
 
-      if (_isUserFinishedRegister && _isUserFilledQuitionaire) {
+      if (isUserFinishedRegister && isUserFilledQuitionaire) {
         // Get.offAllNamed(MainPage.routeName);
         Get.offAllNamed(MainPage.routeName);
-      } else if (_isUserFinishedRegister) {
+      } else if (isUserFinishedRegister) {
         Get.offAllNamed(PersonalDataPage.routeName);
       } else {
         if (Get.currentRoute != WelcomePage.routeName) {
@@ -57,14 +56,14 @@ class AuthController extends GetxController {
           print('here');
         }
 
-        final _signupController = Get.find<SignUpController>();
+        final signupController = Get.find<SignUpController>();
 
-        if (_signupController.currentStep == SignUpSteps.first) {
-          final _welcomepageController = Get.find<WelcomePageController>();
+        if (signupController.currentStep == SignUpSteps.first) {
+          final welcomepageController = Get.find<WelcomePageController>();
 
-          _signupController.setSignUpStep(SignUpSteps.second);
-          _welcomepageController.setPanelState(WelcomePanelState.register);
-          _welcomepageController.openPanel();
+          signupController.setSignUpStep(SignUpSteps.second);
+          welcomepageController.setPanelState(WelcomePanelState.register);
+          welcomepageController.openPanel();
         }
       }
     }

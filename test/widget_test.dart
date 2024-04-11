@@ -6,7 +6,6 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:college_match/core/values/firebase_constants.dart';
-import 'package:college_match/data/model/interest_model.dart';
 import 'package:college_match/data/services/question_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -34,7 +33,7 @@ void main() {
   testWidgets('Service Test', (WidgetTester tester) async {
     WidgetsFlutterBinding.ensureInitialized();
     await firebaseInitialization.then((_) {});
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
     final service = QuestionService();
     final questions = await service.getAllMajor();
     print(questions[0].major);

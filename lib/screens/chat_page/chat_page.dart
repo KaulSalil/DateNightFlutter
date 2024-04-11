@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:college_match/core/utils.dart';
-import 'package:college_match/core/values/colors.dart';
 import 'package:college_match/data/model/message_chat_model.dart';
-import 'package:college_match/data/model/user_model.dart';
 import 'package:college_match/screens/chat_page/controllers/chat_page_controller.dart';
 import 'package:college_match/screens/chat_page/local_widgets/left_chat_widget.dart';
 import 'package:college_match/screens/chat_page/local_widgets/message_text_field.dart';
@@ -11,9 +9,7 @@ import 'package:college_match/screens/chat_page/local_widgets/request_parnet_rev
 import 'package:college_match/screens/chat_page/local_widgets/response_partner_reveal_widget.dart';
 import 'package:college_match/screens/chat_page/local_widgets/right_chat_widget.dart';
 import 'package:college_match/screens/global_widgets/dot_loading.dart';
-import 'package:college_match/screens/global_widgets/glow_button_widget.dart';
 import 'package:college_match/screens/global_widgets/revealed_text_widget.dart';
-import 'package:college_match/screens/global_widgets/rounded_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
@@ -30,7 +26,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBFAFF),
+      backgroundColor: const Color(0xFFFBFAFF),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: Obx(
@@ -71,7 +67,7 @@ class ChatPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +76,7 @@ class ChatPage extends StatelessWidget {
                         isRevealed: _controller.isRevealed.value,
                         unReveal: _controller.peerUser.major!,
                         reveal: _controller.peerUser.name!,
-                        style: Get.textTheme.subtitle1!),
+                        style: Get.textTheme.titleMedium!),
                     // Text(
                     //   'Online',
                     //   style: Get.textTheme.caption,
@@ -90,10 +86,10 @@ class ChatPage extends StatelessWidget {
                 // Icon(Icons.more_vert),
                 Expanded(child: Container()),
                 IconButton(
-                  icon: Icon(Icons.more_vert),
+                  icon: const Icon(Icons.more_vert),
                   onPressed: () => _controller.showMoreMenu(context),
                   padding: EdgeInsets.zero,
-                  constraints: BoxConstraints(),
+                  constraints: const BoxConstraints(),
                 ),
               ],
             ),
@@ -101,7 +97,7 @@ class ChatPage extends StatelessWidget {
         ),
       ),
       bottomSheet: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.only(
@@ -117,7 +113,7 @@ class ChatPage extends StatelessWidget {
           ],
         ),
         child: ConstrainedBox(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxHeight: 100,
           ),
           child: Row(
@@ -125,18 +121,18 @@ class ChatPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
                     color: Color(0xFFF4F4F4), shape: BoxShape.circle),
                 child: IconButton(
                   padding: EdgeInsets.zero,
-                  constraints: BoxConstraints(),
-                  icon: Icon(IconlyLight.image2),
-                  color: Color(0xFFA6A6A6),
+                  constraints: const BoxConstraints(),
+                  icon: const Icon(IconlyLight.image2),
+                  color: const Color(0xFFA6A6A6),
                   onPressed: () => _controller.getImage(),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: MessageTextFieldWidget(
                   controller: _controller.messageTextController,
@@ -170,7 +166,7 @@ class ChatPage extends StatelessWidget {
                   return ListView.separated(
                     physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
-                    separatorBuilder: (_, __) => SizedBox(height: 24),
+                    separatorBuilder: (_, __) => const SizedBox(height: 24),
                     padding: const EdgeInsets.all(24),
                     itemBuilder: (context, index) => buildItem(
                         context, snapshot.data?.docs[index], revealed),
@@ -202,7 +198,7 @@ class ChatPage extends StatelessWidget {
         } else if (chatData.type == MessageType.image) {
           content = Image(image: CachedNetworkImageProvider(chatData.content));
         } else {
-          content = Text('This message type is not supported');
+          content = const Text('This message type is not supported');
         }
 
         if (isAm) {
@@ -221,7 +217,7 @@ class ChatPage extends StatelessWidget {
         }
       } else {
         if (isAm) {
-          return RequestPartnerRevealWidget();
+          return const RequestPartnerRevealWidget();
         } else {
           return ResponsePartnerRevealWidget(
               onTap: () => _controller.chatService

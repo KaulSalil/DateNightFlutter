@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
 import 'dart:math';
 
 import 'package:get/get.dart';
@@ -13,11 +12,11 @@ class CirclePainter extends CustomPainter {
   final Animation<double> _animation;
   void circle(Canvas canvas, Rect rect, double value) {
     final double opacity = (1.0 - (value / 4.0)).clamp(0.0, 1.0);
-    final Color _color = color.withOpacity(opacity);
+    final Color color = color.withOpacity(opacity);
     final double size = rect.width / 2;
     final double area = size * size;
     final double radius = sqrt(area * value / 4);
-    final Paint paint = Paint()..color = _color;
+    final Paint paint = Paint()..color = color;
     canvas.drawCircle(rect.center, radius, paint);
   }
 
@@ -45,7 +44,7 @@ class CurveWave extends Curve {
 }
 
 class FindingWidget extends StatefulWidget {
-  FindingWidget({Key? key}) : super(key: key);
+  const FindingWidget({Key? key}) : super(key: key);
 
   @override
   State<FindingWidget> createState() => _FindingWidgetState();
@@ -79,7 +78,7 @@ class _FindingWidgetState extends State<FindingWidget>
           CustomPaint(
             painter: CirclePainter(
               animController,
-              color: Color(0xFFA989FF),
+              color: const Color(0xFFA989FF),
             ),
             child: SizedBox(
               width: 200,
@@ -90,7 +89,7 @@ class _FindingWidgetState extends State<FindingWidget>
           const SizedBox(height: 12),
           Text(
             'Finding your partner...',
-            style: Get.textTheme.subtitle1,
+            style: Get.textTheme.titleMedium,
           ),
         ],
       ),

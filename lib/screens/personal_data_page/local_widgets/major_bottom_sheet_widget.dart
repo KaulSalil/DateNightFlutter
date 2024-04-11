@@ -11,11 +11,11 @@ class MajorBottomSheetWidget {
     required TextEditingController searchTextController,
     required List<MajorModel> data,
   }) {
-    List<MajorModel> _tempMajorList = [];
+    List<MajorModel> tempMajorList = [];
 
     return showModalBottomSheet(
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(15.0)),
       ),
       context: context,
@@ -40,33 +40,33 @@ class MajorBottomSheetWidget {
                         ),
                         onChanged: (value) {
                           setState(() {
-                            _tempMajorList.clear();
-                            _tempMajorList.addAll(data.where((element) =>
+                            tempMajorList.clear();
+                            tempMajorList.addAll(data.where((element) =>
                                 element.major.toLowerCase().contains(value)));
                           });
                         },
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       Expanded(
                         child: ListView.separated(
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {
-                                majorTextController.text = (_tempMajorList
+                                majorTextController.text = (tempMajorList
                                             .isNotEmpty ||
                                         searchTextController.text.isNotEmpty)
-                                    ? _tempMajorList[index].major
+                                    ? tempMajorList[index].major
                                     : data[index].major;
 
                                 Get.back();
                               },
-                              child: (_tempMajorList.isNotEmpty ||
+                              child: (tempMajorList.isNotEmpty ||
                                       searchTextController.text.isNotEmpty)
                                   ? ListTile(
                                       title: Text(
-                                        _tempMajorList[index].major,
+                                        tempMajorList[index].major,
                                         style:
-                                            Get.textTheme.bodyText2!.copyWith(
+                                            Get.textTheme.bodyMedium!.copyWith(
                                           fontSize: 16,
                                         ),
                                       ),
@@ -75,7 +75,7 @@ class MajorBottomSheetWidget {
                                       title: Text(
                                         data[index].major,
                                         style:
-                                            Get.textTheme.bodyText2!.copyWith(
+                                            Get.textTheme.bodyMedium!.copyWith(
                                           fontSize: 16,
                                         ),
                                       ),
@@ -84,9 +84,9 @@ class MajorBottomSheetWidget {
                           },
                           separatorBuilder: (context, index) =>
                               const SizedBox(height: 1),
-                          itemCount: (_tempMajorList.isNotEmpty ||
+                          itemCount: (tempMajorList.isNotEmpty ||
                                   searchTextController.text.isNotEmpty)
-                              ? _tempMajorList.length
+                              ? tempMajorList.length
                               : data.length,
                         ),
                       ),

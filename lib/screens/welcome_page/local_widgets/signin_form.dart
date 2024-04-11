@@ -66,26 +66,26 @@ class SignInForm extends StatelessWidget {
               Obx(
                 () => _controller.isLoading
                     ? const SizedBox(
-                        child: DotLoading(),
                         height: 60,
+                        child: DotLoading(),
                       )
                     : GlowButtonWidget(
                         height: 60,
                         width: double.infinity,
-                        child: Center(
-                          child: Text(
-                            "Sign In",
-                            style: Get.textTheme.subtitle1!.copyWith(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        backgroundColor: Color(0xFFA989FF),
+                        backgroundColor: const Color(0xFFA989FF),
                         glowColor: AppColor.kPrimaryPurple[100]!,
                         glowOffset: const Offset(0, 6),
                         borderRadius: 12,
                         blurRadius: 22,
                         onPressed: () => _controller.trySubmit(),
+                        child: Center(
+                          child: Text(
+                            "Sign In",
+                            style: Get.textTheme.titleMedium!.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
               ),
             ],

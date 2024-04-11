@@ -1,12 +1,11 @@
 import 'package:college_match/core/values/colors.dart';
 import 'package:college_match/screens/global_widgets/dot_loading.dart';
 import 'package:college_match/screens/personal_data_page/controllers/personal_data_page_controller.dart';
-import 'package:college_match/screens/personal_data_page/local_widgets/mark_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class InterestSection extends StatefulWidget {
-  InterestSection({Key? key}) : super(key: key);
+  const InterestSection({Key? key}) : super(key: key);
 
   @override
   State<InterestSection> createState() => _InterestSectionState();
@@ -25,15 +24,15 @@ class _InterestSectionState extends State<InterestSection> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 95),
+              const SizedBox(height: 95),
               Text(
                 "Choose your interests",
-                style: Get.textTheme.subtitle1!.copyWith(
+                style: Get.textTheme.titleMedium!.copyWith(
                   color: Colors.white,
                   fontSize: 18,
                 ),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               Wrap(
                 children: data!.map(
                   (e) {
@@ -48,7 +47,7 @@ class _InterestSectionState extends State<InterestSection> {
                         pressElevation: 0,
                         backgroundColor: Colors.white,
                         selectedColor: AppColor.kPrimaryPurple[100],
-                        labelStyle: Get.textTheme.caption!.copyWith(
+                        labelStyle: Get.textTheme.bodySmall!.copyWith(
                           color: isSelected ? Colors.white : Colors.black,
                           fontSize: 14,
                         ),
@@ -81,7 +80,7 @@ class _InterestSectionState extends State<InterestSection> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
             ),
-            child: Center(child: const DotLoading()),
+            child: const Center(child: DotLoading()),
           ),
         ),
       ),

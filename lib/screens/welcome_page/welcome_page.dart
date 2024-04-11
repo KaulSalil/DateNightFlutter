@@ -1,4 +1,3 @@
-import 'package:college_match/core/values/firebase_constants.dart';
 import 'package:college_match/data/services/auth_service.dart';
 import 'package:college_match/screens/global_widgets/button_logo_widget.dart';
 import 'package:college_match/screens/global_widgets/circle_logo_widget.dart';
@@ -8,7 +7,6 @@ import 'package:college_match/screens/welcome_page/controllers/signup_controller
 import 'package:college_match/screens/welcome_page/controllers/welcome_page_controller.dart';
 import 'package:college_match/screens/welcome_page/local_widgets/signin_form.dart';
 import 'package:college_match/screens/welcome_page/local_widgets/signup_form_first.dart';
-import 'package:college_match/screens/welcome_page/local_widgets/signup_form_otp.dart';
 import 'package:college_match/screens/welcome_page/local_widgets/signup_form_second.dart';
 import 'package:college_match/screens/welcome_page/local_widgets/signup_section_helper..dart';
 import 'package:flutter/material.dart';
@@ -113,7 +111,7 @@ class WelcomePage extends StatelessWidget {
                         const SizedBox(height: 32),
                         Text(
                           "College Match",
-                          style: Get.textTheme.headline2
+                          style: Get.textTheme.displayMedium
                               ?.copyWith(fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(height: 16),
@@ -122,7 +120,7 @@ class WelcomePage extends StatelessWidget {
                           child: Text(
                             "Find new friends and come together with your college mates",
                             textAlign: TextAlign.center,
-                            style: Get.textTheme.bodyText2,
+                            style: Get.textTheme.bodyMedium,
                           ),
                         )
                       ],
@@ -141,7 +139,7 @@ class WelcomePage extends StatelessWidget {
                         children: [
                           Text(
                             "Don't have an account?",
-                            style: Get.textTheme.caption,
+                            style: Get.textTheme.bodySmall,
                           ),
                           TextButton(
                             onPressed: () {
@@ -149,14 +147,14 @@ class WelcomePage extends StatelessWidget {
                                   WelcomePanelState.register;
                               _controller.panelController.open();
                             },
-                            child: Text(
-                              "Sign up",
-                              style: Get.textTheme.caption
-                                  ?.copyWith(fontWeight: FontWeight.w600),
-                            ),
                             style: TextButton.styleFrom(
                                 padding: const EdgeInsets.only(left: 4),
                                 minimumSize: Size.zero),
+                            child: Text(
+                              "Sign up",
+                              style: Get.textTheme.bodySmall
+                                  ?.copyWith(fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ],
                       ),
@@ -184,7 +182,7 @@ class WelcomePage extends StatelessWidget {
               width: double.infinity,
               child: Text(
                 "Login",
-                style: Get.textTheme.headline1,
+                style: Get.textTheme.displayLarge,
               ),
             ),
             const SizedBox(height: 32),
@@ -211,7 +209,7 @@ class WelcomePage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Text(
                     "Or Sign in with",
-                    style: Get.textTheme.caption,
+                    style: Get.textTheme.bodySmall,
                   ),
                 ),
                 Expanded(
@@ -235,15 +233,15 @@ class WelcomePage extends StatelessWidget {
             GlowButtonWidget(
               width: 60,
               height: 60,
-              child: Center(
-                child: Image.asset('assets/icons/google-icon.png'),
-              ),
               backgroundColor: Colors.white,
               glowColor: const Color(0xFF9E9E9E).withAlpha(30),
               glowOffset: const Offset(0, 8),
               borderRadius: 34,
               blurRadius: 15,
               onPressed: _authService.signInWithGoogle,
+              child: Center(
+                child: Image.asset('assets/icons/google-icon.png'),
+              ),
             ),
             Expanded(child: Container()),
             Row(
@@ -252,18 +250,18 @@ class WelcomePage extends StatelessWidget {
               children: [
                 Text(
                   "Don't have an account?",
-                  style: Get.textTheme.caption,
+                  style: Get.textTheme.bodySmall,
                 ),
                 TextButton(
                   onPressed: _controller.movePanel,
-                  child: Text(
-                    "Sign up",
-                    style: Get.textTheme.caption
-                        ?.copyWith(fontWeight: FontWeight.w600),
-                  ),
                   style: TextButton.styleFrom(
                     padding: const EdgeInsets.only(left: 4),
                     minimumSize: Size.zero,
+                  ),
+                  child: Text(
+                    "Sign up",
+                    style: Get.textTheme.bodySmall
+                        ?.copyWith(fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
@@ -289,7 +287,7 @@ class WelcomePage extends StatelessWidget {
                 width: double.infinity,
                 child: Text(
                   "Sign Up",
-                  style: Get.textTheme.headline1,
+                  style: Get.textTheme.displayLarge,
                 ),
               ),
               const SizedBox(height: 32),

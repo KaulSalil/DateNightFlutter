@@ -34,7 +34,7 @@ class _FlyingDotState extends State<FlyingDot>
   void initState() {
     _reverse = widget.reverse ?? false;
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     Tween<Offset> start = _reverse
         ? Tween<Offset>(begin: Offset(-rangeX, 0), end: Offset(0, rangeY))
         : Tween<Offset>(begin: Offset(rangeX, 0), end: Offset(0, rangeY));
@@ -47,19 +47,19 @@ class _FlyingDotState extends State<FlyingDot>
     _position = start.animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0, 0.25),
+        curve: const Interval(0, 0.25),
       ),
     );
     _position2 = middle.animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.25, 0.5),
+        curve: const Interval(0.25, 0.5),
       ),
     );
     _position3 = end.animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.5, 1),
+        curve: const Interval(0.5, 1),
       ),
     );
     //run animation

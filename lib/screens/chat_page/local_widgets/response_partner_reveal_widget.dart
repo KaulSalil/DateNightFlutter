@@ -17,7 +17,7 @@ class ResponsePartnerRevealWidget extends StatelessWidget {
       children: [
         Container(
           width: 300,
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: const BorderRadius.all(
@@ -35,34 +35,34 @@ class ResponsePartnerRevealWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(
                 'Your partner ask to reveal identity',
-                style: Get.textTheme.subtitle1,
+                style: Get.textTheme.titleMedium,
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 'Ignore to decline',
-                style: Get.textTheme.caption,
+                style: Get.textTheme.bodySmall,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               GlowButtonWidget(
                 height: 50,
                 width: double.infinity,
-                child: Center(
-                  child: Text(
-                    "Accept",
-                    style: Get.textTheme.subtitle1!.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                backgroundColor: Color(0xFFA989FF),
+                backgroundColor: const Color(0xFFA989FF),
                 glowColor: AppColor.kPrimaryPurple[100]!,
                 glowOffset: const Offset(0, 6),
                 borderRadius: 12,
                 blurRadius: 22,
                 onPressed: onTap,
+                child: Center(
+                  child: Text(
+                    "Accept",
+                    style: Get.textTheme.titleMedium!.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

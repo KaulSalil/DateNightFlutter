@@ -15,7 +15,7 @@ class LeftChatWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -33,7 +33,7 @@ class LeftChatWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 12,
           ),
           ConstrainedBox(
@@ -41,9 +41,9 @@ class LeftChatWidget extends StatelessWidget {
               maxWidth: Get.width * 0.6,
             ),
             child: Container(
-              padding: EdgeInsets.only(bottom: 8, top: 16, left: 16, right: 16),
+              padding: const EdgeInsets.only(bottom: 8, top: 16, left: 16, right: 16),
               decoration: BoxDecoration(
-                color: Color(0xFFFFEAF4),
+                color: const Color(0xFFFFEAF4),
                 borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(16),
                   bottomLeft: Radius.circular(16),
@@ -61,13 +61,13 @@ class LeftChatWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   content,
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   SizedBox(
                     width: double.infinity,
                     child: Text(
                       time,
-                      style: Get.textTheme.caption!.copyWith(
-                        color: Color(0xFF737373),
+                      style: Get.textTheme.bodySmall!.copyWith(
+                        color: const Color(0xFF737373),
                         fontSize: 9,
                       ),
                       textAlign: TextAlign.end,

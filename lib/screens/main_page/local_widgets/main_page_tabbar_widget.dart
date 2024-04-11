@@ -4,7 +4,7 @@ class MainPageTabBarWidget extends StatefulWidget {
   final TabController tabController;
   final List<String> tabTitle;
 
-  MainPageTabBarWidget({
+  const MainPageTabBarWidget({
     Key? key,
     required this.tabController,
     required this.tabTitle,

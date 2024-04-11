@@ -4,7 +4,6 @@ import 'package:college_match/screens/personal_data_page/controllers/personal_da
 import 'package:college_match/screens/personal_data_page/local_widgets/mark_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 
 class LifestyleSection extends StatelessWidget {
   final _controller = Get.find<PersonalDataPageController>();
@@ -26,21 +25,21 @@ class LifestyleSection extends StatelessWidget {
             return Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 95),
+                const SizedBox(height: 95),
                 Text(
                   "Mark your answers based on your own lifestyle",
-                  style: Get.textTheme.subtitle1!.copyWith(
+                  style: Get.textTheme.titleMedium!.copyWith(
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 _buildQuestionCard(lifestyleQuestion, index),
               ],
             );
           } else if (index == data.length - 1) {
             return Padding(
-              padding: EdgeInsets.only(bottom: 80),
+              padding: const EdgeInsets.only(bottom: 80),
               child: _buildQuestionCard(lifestyleQuestion, index),
             );
           } else {
@@ -59,7 +58,7 @@ class LifestyleSection extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
             ),
-            child: Center(child: const DotLoading()),
+            child: const Center(child: DotLoading()),
           ),
         ),
       ),

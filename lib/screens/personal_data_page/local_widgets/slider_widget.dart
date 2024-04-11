@@ -1,6 +1,5 @@
 import 'package:college_match/screens/personal_data_page/local_widgets/custom_sider_thumb_circle.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SliderWidget extends StatefulWidget {
   final double sliderHeight;
@@ -11,12 +10,12 @@ class SliderWidget extends StatefulWidget {
   double value;
 
   SliderWidget(
-      {this.sliderHeight = 48,
+      {Key? key, this.sliderHeight = 48,
       this.max = 10,
       this.min = 0,
       this.fullWidth = false,
       required this.onChanged,
-      this.value = 0});
+      this.value = 0}) : super(key: key);
 
   @override
   _SliderWidgetState createState() => _SliderWidgetState();
